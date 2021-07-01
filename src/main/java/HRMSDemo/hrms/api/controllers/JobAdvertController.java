@@ -42,11 +42,6 @@ public class JobAdvertController {
 		return this.jobAdvertService.findByIsActiveTrueAndEmployer_Id(employerId);
 	}
 	
-//	@GetMapping("/IsActiveTrue")
-//	public DataResult<JobAdvert> findByIdAndEmployer(@RequestParam(name="user_id")int user_id){
-//		return this.jobAdvertService.findByIdAndEmployer(user_id);
-//	}
-	
 	@GetMapping("/IsActiveTrue")
 	public DataResult<List<JobAdvert>> findByIsActiveTrue(){
 		return this.jobAdvertService.findByIsActiveTrue();

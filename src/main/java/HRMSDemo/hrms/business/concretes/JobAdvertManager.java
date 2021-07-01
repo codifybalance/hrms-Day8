@@ -22,7 +22,6 @@ public class JobAdvertManager implements JobAdvertService{
 		this.jobAdvertDao = jobAdvertDao;
 	}
 	
-	
 	@Override
 	public DataResult<List<JobAdvert>> getAll() {
 		return new SuccessDataResult<List<JobAdvert>>
@@ -35,32 +34,20 @@ public class JobAdvertManager implements JobAdvertService{
 		this.jobAdvertDao.save(jobAdvert);
 		return new SuccessDataResult<JobAdvert>("ilan eklendi");
 	}
-
-
 	@Override
 	public DataResult<JobAdvert> getById(int id) {
 		return new SuccessDataResult<JobAdvert>(this.jobAdvertDao.getByJobId(id));
 	}
-
-
-
 
 	@Override
 	public DataResult<List<JobAdvert>> findByIsActiveTrueAndEmployer_Id(int employerId) {
 		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.findByIsActiveTrueAndEmployer_Id(employerId));
 	}
 
-
 	@Override
 	public DataResult<List<JobAdvert>> findByIsActiveTrue() {
 		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.findByIsActiveTrue());
 	}
-
-
-//	@Override
-//	public DataResult<JobAdvert> findByIdAndEmployer(int user_id) {
-//		return new SuccessDataResult<JobAdvert>(this.jobAdvertDao.findByIdAndEmployer(user_id));
-//	}
 
 
 	@Override
@@ -69,9 +56,5 @@ public class JobAdvertManager implements JobAdvertService{
 		(this.jobAdvertDao.findByIsActiveTrueOrderByApplicationDeadline(),
 				"ApplicationDeadline ilanlar listelendi");
 	}
-
-
-
-
 
 }

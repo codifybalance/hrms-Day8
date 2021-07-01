@@ -22,10 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class JobAdvert{
 
-	/*
-	 * @Column(name="job_id") 
-	 * private int jobPosition; //iş pozisyonu
-	 */	
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="job_id")
@@ -44,10 +41,10 @@ public class JobAdvert{
 	private String salary;  //maaş
 	
 	@Column(name="number_of_open_positions")
-	private int numberOfOpenPositions; //açıkpozisyon
+	private int numberOfOpenPositions; 
 	
 	@Column(name="application_deadline")
-	private String applicationDeadline;  //son başvuru günü
+	private String applicationDeadline;  
 	
 	@Column(name="is_active")
 	private boolean isActive;
@@ -58,7 +55,7 @@ public class JobAdvert{
 	
 	
 	@ManyToOne()
-	@JoinColumn(name = "employer_id") // employerId -> employer_id
+	@JoinColumn(name = "employer_id") 
 	private Employer employer;
 	
 
